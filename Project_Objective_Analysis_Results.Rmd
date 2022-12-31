@@ -1,0 +1,31 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## Project Overview
+
+### This is a made-up dataset made by IBM. It contains information for 1450 employees across 35 variables that provide various employment related details like Gender, Age, Distance from Home, Education Level and Field, Job Level and Job Role. The aim of the project is multifold
+### 1)Explore gender difference in employee attrition
+### 2) Predict employee attrition and analyse which factors impact attrition
+### 3) Compare expected tenure in company for male vs females 
+
+## METHODOLOGY
+
+### Exploratory analysis is conduted to analyse and understand the data across various attributes. Performace Rating had 50% of the data missing so we have removed it from building the prediction model.Few other columns like EmployeeCount, Over18, standardHours columns were removed as they were redundant.
+
+### Use Chi-square test to explore gender differences in employee attrition
+
+### Partition the dataset into Train (80%), Validate(10%) and Test(10%) considering this a small dataset to validate and test our model. Build a predictive model Using Linear Discriminant Analysis(LDA), Logistic Regression, Regression Trees, KNN and Random Forest Models and then compare and evaluate their performance in terms of accuracy.Further optimize the model by finding the significant variables and building our model only with these significant variables and we see a reduction in AUC by creating a parsimonious model.Use the best performing model on validate dataset and then use the model on test set.Output of the test data stored in Attrition_Prediction.csv
+
+## RESULTS
+
+### Use Chi-square test to explore gender differences in employee attrition. We found that p-value is not less than 0.05 so chi-square analysis confirms that there was no significant difference between what you would expect to see in gender-wise attrition and what was observed
+
+### Predictive Model was built using the 5 algrothims listed above and Logistice Regression and Linear Discriminant were found to have mean ccuracy of 87%. Check for multicollinearity of the model by using VIF and found few factors which had VIF values>5. Removed these variables and then optimized the model further. Used this model on validate dataset and accuracy of 88% was achieved. Used this model on test dataset and output is stored as Attriiton_Prediction.csv
+
+###  To compare expected tenure in company for male vs females conducted Kaplan-Meier survival analysis. Oberved a very interesting trend from the analysis. We see that for females after 30 years chance of survival increases considerably but the trend varied for males. 
+### We observe that with the tenure there is a steady increased chance of survival but after 20 years for males the chance of survival almost plateaued
+### Looking at gender split there is a considerable difference in survival rates between males and females after 30 years of tenure
+
+
